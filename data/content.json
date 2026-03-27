@@ -1,0 +1,105 @@
+{
+  "site": {
+    "companyName": "SunnyPlaste UK",
+    "tagline": "Precision Plastic Packaging for UK Industry",
+    "phone": "+44 121 234 5678",
+    "email": "enquiries@sunnyplaste.co.uk",
+    "whatsapp": "+447911123456",
+    "address": {
+      "line1": "Unit 12, Holt Industrial Estate",
+      "line2": "Birmingham",
+      "postcode": "B6 7AP",
+      "country": "United Kingdom"
+    },
+    "socialLinks": {
+      "linkedin": "https://linkedin.com/company/sunnyplaste",
+      "twitter": ""
+    }
+  },
+  "hero": {
+    "headline": "Precision Plastic Packaging for UK Industry",
+    "subheadline": "Thermoformed trays, containers and fully bespoke packaging solutions — designed, tested and manufactured in the UK.",
+    "ctaPrimary": { "label": "Request a Quote", "href": "/contact" },
+    "ctaSecondary": { "label": "View Products", "href": "/products" },
+    "backgroundImage": "/images/hero-bg.jpg"
+  },
+  "trustBar": {
+    "stats": [
+      { "value": 15, "suffix": "+", "label": "Years Manufacturing" },
+      { "value": 500, "suffix": "+", "label": "Products Delivered" },
+      { "value": 98, "suffix": "%", "label": "On-Time Delivery" },
+      { "value": 50, "suffix": "+", "label": "UK Clients" }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "ISO 9001:2015",
+      "description": "Quality Management System",
+      "image": "/images/cert-iso9001.svg"
+    },
+    {
+      "name": "ISO 14001:2015",
+      "description": "Environmental Management System",
+      "image": "/images/cert-iso14001.svg"
+    },
+    {
+      "name": "BRCGS AA Grade",
+      "description": "Global Food Safety Standard",
+      "image": "/images/cert-brcgs.svg"
+    }
+  ],
+  "industries": [
+    { "id": "food-beverage", "label": "Food & Beverage", "icon": "UtensilsCrossed" },
+    { "id": "pharmaceutical", "label": "Pharmaceutical", "icon": "Pill" },
+    { "id": "automotive", "label": "Automotive", "icon": "Car" },
+    { "id": "retail", "label": "Retail & FMCG", "icon": "ShoppingBag" }
+  ],
+  "about": {
+    "headline": "Built on British Manufacturing Excellence",
+    "story": "Founded in 2009, SunnyPlaste began as a specialist thermoforming operation supplying regional food manufacturers in the West Midlands. Over fifteen years, we have grown into one of the UK's most trusted plastic packaging manufacturers, serving blue-chip clients across food, pharmaceutical, automotive and retail sectors.\n\nOur 45,000 sq ft facility houses state-of-the-art thermoforming lines, an in-house tooling workshop, and an ISO-certified quality laboratory. Every product that leaves our site has been engineered, tested and validated to the standards your industry demands.\n\nWe are independently certified to ISO 9001, ISO 14001, and BRCGS AA Grade — not because we have to be, but because our clients expect nothing less.",
+    "factoryImage": "/images/about-factory.jpg",
+    "capabilities": [
+      {
+        "title": "Thermoforming",
+        "description": "State-of-the-art pressure and vacuum forming lines for high-volume, precision packaging.",
+        "icon": "Factory"
+      },
+      {
+        "title": "In-House Tooling",
+        "description": "Our own mould design and CNC machining capability means faster lead times and lower costs.",
+        "icon": "Settings"
+      },
+      {
+        "title": "Quality Lab",
+        "description": "ISO-certified on-site testing: dimensional inspection, material analysis, seal integrity.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Sustainable Materials",
+        "description": "rPET, bio-based and recycled-content options to meet your sustainability commitments.",
+        "icon": "Leaf"
+      }
+    ]
+  },
+  "contact": {
+    "formHeadline": "Request a Quote",
+    "formSubtext": "Tell us about your packaging requirements and our team will respond within 1 business day.",
+    "mapEmbedUrl": ""
+  },
+  "footer": {
+    "copyrightText": "© 2025 SunnyPlaste UK Ltd. All rights reserved.",
+    "companyRegNumber": "12345678",
+    "links": {
+      "quickLinks": [
+        { "label": "Home", "href": "/" },
+        { "label": "About", "href": "/about" },
+        { "label": "Products", "href": "/products" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "legal": [
+        { "label": "Privacy Policy", "href": "/privacy" },
+        { "label": "Cookie Policy", "href": "/cookies" }
+      ]
+    }
+  }
+}
