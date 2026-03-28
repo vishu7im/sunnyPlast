@@ -27,7 +27,9 @@ export function isFirebaseConfigured(): boolean {
 
 export function getDb(): Firestore {
   initFirebase();
-  return getFirestore();
+  const db = getFirestore();
+  db.settings({ ignoreUndefinedProperties: true });
+  return db;
 }
 
 export function getBucket(): ReturnType<Storage["bucket"]> {

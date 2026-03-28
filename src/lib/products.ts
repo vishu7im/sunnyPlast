@@ -57,7 +57,7 @@ export async function updateProduct(id: string, data: Partial<Product>): Promise
     writeJson(products);
     return;
   }
-  await getDb().collection(COLLECTION).doc(id).update(data as Record<string, unknown>);
+  await getDb().collection(COLLECTION).doc(id).set(data, { merge: true });
 }
 
 export async function deleteProduct(id: string): Promise<boolean> {
