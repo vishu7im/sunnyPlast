@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import { NextRequest, NextResponse } from "next/server";
 import { createAuthToken } from "@/lib/auth";
 import { COOKIE_NAME } from "@/lib/constants";
