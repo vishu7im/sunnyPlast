@@ -7,6 +7,8 @@ import CapabilitiesSection from "@/components/home/CapabilitiesSection";
 import CTABanner from "@/components/home/CTABanner";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const content = await getContent();
 

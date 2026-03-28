@@ -7,6 +7,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { CATEGORY_LABELS } from "@/lib/constants";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Products",
   description:

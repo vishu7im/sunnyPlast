@@ -6,6 +6,8 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import TrustBar from "@/components/home/TrustBar";
 import CTABanner from "@/components/home/CTABanner";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "About Us",
   description:

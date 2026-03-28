@@ -9,6 +9,8 @@ import ProductCard from "@/components/products/ProductCard";
 import { INDUSTRY_LABELS } from "@/lib/constants";
 import type { IndustryId } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: { slug: string };
 }

@@ -5,6 +5,8 @@ import StickyQuoteCTA from "@/components/layout/StickyQuoteCTA";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import ThemeCustomizerButton from "@/components/theme/ThemeCustomizerButton";
 
+export const dynamic = "force-dynamic";
+
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const content = await getContent();
   return (
