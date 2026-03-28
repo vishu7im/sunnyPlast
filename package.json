@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.9.1",
     "clsx": "^2.1.1",
     "firebase-admin": "^13.7.0",
     "formidable": "^3.5.4",
