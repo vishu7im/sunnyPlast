@@ -2,6 +2,8 @@ import { getContent } from "@/lib/content";
 import type { Metadata } from "next";
 import ContentEditor from "@/components/admin/ContentEditor";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = { title: "Site Content" };
 
 export default async function AdminContentPage() {

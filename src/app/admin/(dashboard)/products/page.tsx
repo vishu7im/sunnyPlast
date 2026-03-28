@@ -4,6 +4,8 @@ import { CATEGORY_LABELS } from "@/lib/constants";
 import type { Metadata } from "next";
 import DeleteProductButton from "./DeleteProductButton";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = { title: "Products" };
 
 export default async function AdminProductsPage() {

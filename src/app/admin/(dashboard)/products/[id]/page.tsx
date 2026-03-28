@@ -3,6 +3,8 @@ import { getProductById, getAllProducts } from "@/lib/products";
 import ProductForm from "@/components/admin/ProductForm";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps { params: { id: string } }
 
 export const metadata: Metadata = { title: "Edit Product" };

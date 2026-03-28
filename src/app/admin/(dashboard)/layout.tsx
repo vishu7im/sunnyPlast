@@ -1,6 +1,8 @@
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: { default: "Admin", template: "%s | SunnyPlaste Admin" },
   robots: { index: false, follow: false },
