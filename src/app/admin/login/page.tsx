@@ -18,19 +18,6 @@ export default function AdminLoginPage() {
     setError("");
     setLoading(true);
 
-    // Demo mode: client-side auth (GitHub Pages / static hosting)
-    if (process.env.NEXT_PUBLIC_STATIC_DEMO === "true") {
-      await new Promise((r) => setTimeout(r, 400));
-      if (username === "admin" && password === "demo") {
-        localStorage.setItem("admin_demo_auth", "1");
-        router.push("/admin/products");
-      } else {
-        setError('Demo credentials: username "admin", password "demo"');
-        setLoading(false);
-      }
-      return;
-    }
-
     try {
       const res = await fetch("/api/auth/login", {
         method: "POST",

@@ -31,7 +31,11 @@ export function getDb(): Firestore {
   if (db) return db;
   initFirebase();
   db = getFirestore();
-  db.settings({ ignoreUndefinedProperties: true });
+  try {
+    db.settings({ ignoreUndefinedProperties: true });
+  } catch {
+    // Already initialized on a previous call (e.g. hot reload) — safe to ignore
+  }
   return db;
 }
 
