@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Browse our full range of UK-manufactured plastic packaging: thermoformed trays, industrial containers, pharmaceutical packaging, retail packaging and bespoke solutions.",
 };
 
-export default function ProductsPage() {
-  const products = getAllProducts();
+export default async function ProductsPage() {
+  const products = await getAllProducts();
   return (
     <div className="pt-16">
       <ProductsContent products={products} />

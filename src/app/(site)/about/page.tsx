@@ -16,8 +16,8 @@ const capabilityIcons: Record<string, React.ElementType> = {
   Factory, Settings, ShieldCheck, Leaf,
 };
 
-export default function AboutPage() {
-  const content = getContent();
+export default async function AboutPage() {
+  const content = await getContent();
   const { about, trustBar } = content;
 
   const paragraphs = about.story.split("\n\n");

@@ -6,8 +6,8 @@ import DeleteProductButton from "./DeleteProductButton";
 
 export const metadata: Metadata = { title: "Products" };
 
-export default function AdminProductsPage() {
-  const products = getAllProducts();
+export default async function AdminProductsPage() {
+  const products = await getAllProducts();
 
   return (
     <div className="p-8">

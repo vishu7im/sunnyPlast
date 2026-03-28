@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllProducts, writeAllProducts } from "@/lib/products";
+import { getProductById, updateProduct, deleteProduct } from "@/lib/products";
 import { verifyToken } from "@/lib/auth";
 import { COOKIE_NAME } from "@/lib/constants";
 
 interface Params { params: { id: string } }
 
 export async function GET(_req: NextRequest, { params }: Params) {
-  const products = getAllProducts();
-  const product = products.find((p) => p.id === params.id);
+  const product = await getProductById(params.id);
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ product });
 }
@@ -19,15 +18,13 @@ export async function PUT(req: NextRequest, { params }: Params) {
   }
 
   try {
-    const products = getAllProducts();
-    const idx = products.findIndex((p) => p.id === params.id);
-    if (idx === -1) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    const existing = await getProductById(params.id);
+    if (!existing) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
     const body = await req.json();
-    products[idx] = { ...products[idx], ...body, id: params.id, updatedAt: new Date().toISOString() };
-    writeAllProducts(products);
-
-    return NextResponse.json({ product: products[idx] });
+    const updated = { ...existing, ...body, id: params.id, updatedAt: new Date().toISOString() };
+    await updateProduct(params.id, updated);
+    return NextResponse.json({ product: updated });
   } catch {
     return NextResponse.json({ error: "Failed to update product" }, { status: 500 });
   }
@@ -40,12 +37,8 @@ export async function DELETE(req: NextRequest, { params }: Params) {
   }
 
   try {
-    const products = getAllProducts();
-    const filtered = products.filter((p) => p.id !== params.id);
-    if (filtered.length === products.length) {
-      return NextResponse.json({ error: "Not found" }, { status: 404 });
-    }
-    writeAllProducts(filtered);
+    const deleted = await deleteProduct(params.id);
+    if (!deleted) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json({ error: "Failed to delete product" }, { status: 500 });

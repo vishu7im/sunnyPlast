@@ -8,7 +8,7 @@ import CTABanner from "@/components/home/CTABanner";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 export default async function HomePage() {
-  const content = getContent();
+  const content = await getContent();
 
   return (
     <>

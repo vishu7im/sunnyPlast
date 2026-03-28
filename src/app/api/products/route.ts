@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAllProducts, writeAllProducts } from "@/lib/products";
+import { getAllProducts, createProduct } from "@/lib/products";
 import { verifyToken } from "@/lib/auth";
 import { COOKIE_NAME } from "@/lib/constants";
 import { slugify } from "@/lib/slugify";
@@ -8,7 +8,7 @@ import type { ProductCategory } from "@/types";
 
 export async function GET(req: NextRequest) {
   try {
-    let products = getAllProducts();
+    let products = await getAllProducts();
     const category = req.nextUrl.searchParams.get("category") as ProductCategory | null;
     const featured = req.nextUrl.searchParams.get("featured");
 
@@ -29,8 +29,6 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const products = getAllProducts();
-
     const now = new Date().toISOString();
     const newProduct = {
       ...body,
@@ -40,9 +38,7 @@ export async function POST(req: NextRequest) {
       updatedAt: now,
     };
 
-    products.push(newProduct);
-    writeAllProducts(products);
-
+    await createProduct(newProduct);
     return NextResponse.json({ product: newProduct }, { status: 201 });
   } catch {
     return NextResponse.json({ error: "Failed to create product" }, { status: 500 });

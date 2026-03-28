@@ -5,8 +5,8 @@ import StickyQuoteCTA from "@/components/layout/StickyQuoteCTA";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import ThemeCustomizerButton from "@/components/theme/ThemeCustomizerButton";
 
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
-  const content = getContent();
+export default async function SiteLayout({ children }: { children: React.ReactNode }) {
+  const content = await getContent();
   return (
     <ThemeProvider>
       <Navbar logoUrl={content.site.logo} companyName={content.site.companyName} />

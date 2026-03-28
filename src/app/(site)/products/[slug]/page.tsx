@@ -14,12 +14,12 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const products = getAllProducts();
+  const products = await getAllProducts();
   return products.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const product = getProductBySlug(params.slug);
+  const product = await getProductBySlug(params.slug);
   if (!product) return {};
   return {
     title: product.seo.metaTitle,
@@ -27,11 +27,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default function ProductDetailPage({ params }: PageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: PageProps) {
+  const product = await getProductBySlug(params.slug);
   if (!product) notFound();
 
-  const all = getAllProducts();
+  const all = await getAllProducts();
   const related = all
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 3);

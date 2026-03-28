@@ -4,8 +4,8 @@ import ContentEditor from "@/components/admin/ContentEditor";
 
 export const metadata: Metadata = { title: "Site Content" };
 
-export default function AdminContentPage() {
-  const content = getContent();
+export default async function AdminContentPage() {
+  const content = await getContent();
 
   return (
     <div className="p-8 max-w-2xl">

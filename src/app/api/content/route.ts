@@ -5,7 +5,7 @@ import { COOKIE_NAME } from "@/lib/constants";
 
 export async function GET() {
   try {
-    const content = getContent();
+    const content = await getContent();
     return NextResponse.json(content);
   } catch {
     return NextResponse.json({ error: "Failed to read content" }, { status: 500 });
@@ -19,10 +19,10 @@ export async function PUT(req: NextRequest) {
   }
 
   try {
-    const existing = getContent();
+    const existing = await getContent();
     const patch = await req.json();
     const merged = deepMerge(existing, patch);
-    writeContent(merged);
+    await writeContent(merged);
     return NextResponse.json(merged);
   } catch {
     return NextResponse.json({ error: "Failed to update content" }, { status: 500 });

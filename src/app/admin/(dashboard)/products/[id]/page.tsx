@@ -7,12 +7,12 @@ interface PageProps { params: { id: string } }
 
 export const metadata: Metadata = { title: "Edit Product" };
 
-export function generateStaticParams() {
-  return getAllProducts().map((p) => ({ id: p.id }));
+export async function generateStaticParams() {
+  return (await getAllProducts()).map((p) => ({ id: p.id }));
 }
 
-export default function EditProductPage({ params }: PageProps) {
-  const product = getProductById(params.id);
+export default async function EditProductPage({ params }: PageProps) {
+  const product = await getProductById(params.id);
   if (!product) notFound();
 
   return (
