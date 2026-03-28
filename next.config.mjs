@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const isGHPages = process.env.GITHUB_PAGES === "true";
+// Only activate static export in CI (GitHub Actions). Never on Vercel.
+const isGHPages = process.env.GITHUB_PAGES === "true" && process.env.CI === "true";
 
 // Set REPO_NAME as a GitHub Actions variable if your site lives at
 // https://username.github.io/REPO_NAME  (project site).

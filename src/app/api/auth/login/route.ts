@@ -6,8 +6,8 @@ export async function POST(req: NextRequest) {
   try {
     const { username, password } = await req.json();
 
-    const expectedUser =  "admin";
-    const expectedPass =  "admin";
+    const expectedUser = process.env.ADMIN_USERNAME || "admin";
+    const expectedPass = process.env.ADMIN_PASSWORD || "admin";
 
     if (username !== expectedUser || password !== expectedPass) {
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
