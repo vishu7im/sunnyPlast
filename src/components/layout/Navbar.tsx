@@ -8,10 +8,10 @@ import { clsx } from "clsx";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "Home",     href: "/" },
-  { label: "About",    href: "/about" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Contact",  href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 interface NavbarProps {
@@ -19,7 +19,10 @@ interface NavbarProps {
   companyName?: string;
 }
 
-export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarProps) {
+export default function Navbar({
+  logoUrl,
+  companyName = "SunnyPlaste",
+}: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -44,40 +47,43 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           transparent
             ? "bg-transparent"
-            : "bg-plum-surface/80 backdrop-blur-2xl shadow-nav border-b border-[rgba(203,160,198,0.15)]"
+            : "bg-plum-surface/80 backdrop-blur-2xl shadow-nav border-b border-[rgba(203,160,198,0.15)]",
         )}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              {logoUrl ? (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  src={logoUrl}
-                  alt={companyName}
-                  className="h-8 w-auto object-contain"
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                />
-              ) : (
-                <>
-                  <div className={clsx(
+              <>
+                <div
+                  className={clsx(
                     "flex items-center justify-center w-8 h-8 rounded-lg",
-                    transparent ? "bg-white/20" : "bg-plum-primary"
-                  )}>
+                    transparent ? "bg-white/20" : "bg-plum-primary",
+                  )}
+                >
+                  {logoUrl ? (
+                    <img
+                      src={logoUrl}
+                      alt={companyName}
+                      className="h-8 w-auto object-contain"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  ) : (
                     <Package2 className="w-5 h-5 text-white" strokeWidth={2} />
-                  </div>
-                  <span className={clsx(
+                  )}
+                </div>
+                <span
+                  className={clsx(
                     "font-display font-bold text-lg",
-                    transparent ? "text-white" : "text-plum-on-surface"
-                  )}>
-                    {companyName}<span className={clsx(
-                      "font-normal text-sm ml-0.5",
-                      transparent ? "text-white/70" : "text-plum-on-surface-variant"
-                    )}> UK</span>
-                  </span>
-                </>
-              )}
+                    transparent ? "text-white" : "text-plum-on-surface",
+                  )}
+                >
+                  {companyName}
+                 
+                </span>
+              </>
             </Link>
 
             {/* Desktop nav */}
@@ -88,8 +94,9 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
                   href={link.href}
                   className={clsx(
                     "nav-link",
-                    transparent && "!text-white/90 hover:!text-white after:!bg-white",
-                    pathname === link.href && "active"
+                    transparent &&
+                      "!text-white/90 hover:!text-white after:!bg-white",
+                    pathname === link.href && "active",
                   )}
                 >
                   {link.label}
@@ -103,7 +110,9 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
                 href="tel:+441212345678"
                 className={clsx(
                   "flex items-center gap-1.5 text-sm font-medium transition-colors",
-                  transparent ? "text-white/80 hover:text-white" : "text-plum-on-surface-variant hover:text-plum-primary"
+                  transparent
+                    ? "text-white/80 hover:text-white"
+                    : "text-plum-on-surface-variant hover:text-plum-primary",
                 )}
               >
                 <Phone className="w-3.5 h-3.5" />
@@ -125,11 +134,15 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
                 "md:hidden p-2 rounded-lg transition-colors",
                 transparent
                   ? "text-white hover:bg-white/10"
-                  : "text-plum-on-surface-variant hover:bg-plum-surface-low"
+                  : "text-plum-on-surface-variant hover:bg-plum-surface-low",
               )}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -139,14 +152,21 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
       <div
         className={clsx(
           "fixed inset-0 z-40 md:hidden transition-opacity duration-300",
-          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          mobileOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
         )}
       >
-        <div className="absolute inset-0 bg-plum-on-surface/50" onClick={() => setMobileOpen(false)} />
-        <nav className={clsx(
-          "absolute top-0 right-0 h-full w-72 bg-plum-surface shadow-2xl transition-transform duration-300",
-          mobileOpen ? "translate-x-0" : "translate-x-full"
-        )}>
+        <div
+          className="absolute inset-0 bg-plum-on-surface/50"
+          onClick={() => setMobileOpen(false)}
+        />
+        <nav
+          className={clsx(
+            "absolute top-0 right-0 h-full w-72 bg-plum-surface shadow-2xl transition-transform duration-300",
+            mobileOpen ? "translate-x-0" : "translate-x-full",
+          )}
+        >
           <div className="p-6 pt-20">
             <div className="space-y-1">
               {navLinks.map((link) => (
@@ -157,7 +177,7 @@ export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarP
                     "block px-4 py-3 rounded-lg text-base font-medium transition-colors",
                     pathname === link.href
                       ? "bg-plum-surface-low text-plum-primary"
-                      : "text-plum-on-surface-variant hover:bg-plum-surface-low hover:text-plum-primary"
+                      : "text-plum-on-surface-variant hover:bg-plum-surface-low hover:text-plum-primary",
                   )}
                 >
                   {link.label}

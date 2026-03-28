@@ -17,7 +17,7 @@ export default async function HomePage() {
       <HeroSection
         slides={content.hero.heroCarousel ?? []}
         defaultContent={{
-          eyebrow: "SunnyPlaste UK",
+          eyebrow: "",
           headline: content.hero.headline,
           subheadline: content.hero.subheadline,
           ctaPrimary: content.hero.ctaPrimary,
