@@ -4,6 +4,8 @@ import { getStorage, Storage } from "firebase-admin/storage";
 
 let app: App;
 
+let db: Firestore | null = null;
+
 function initFirebase(): App {
   if (getApps().length > 0) return getApps()[0];
   app = initializeApp({
@@ -26,8 +28,9 @@ export function isFirebaseConfigured(): boolean {
 }
 
 export function getDb(): Firestore {
+  if (db) return db;
   initFirebase();
-  const db = getFirestore();
+  db = getFirestore();
   db.settings({ ignoreUndefinedProperties: true });
   return db;
 }
