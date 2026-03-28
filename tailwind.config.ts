@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         // ── Plum Gallery (public site) ───────────────────────
         plum: {
-          primary:              "#a61c82",
-          "primary-container":  "#fc69cd",
+          primary:              "var(--brand-primary)",
+          "primary-container":  "var(--brand-primary-container)",
           "on-primary":         "#ffffff",
           surface:              "#fff3f9",
           "surface-low":        "#ffebf9",
@@ -84,7 +84,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-hero": "linear-gradient(135deg, rgba(166,28,130,0.92) 0%, rgba(252,105,205,0.70) 100%)",
-        "gradient-cta":  "linear-gradient(135deg, #a61c82 0%, #fc69cd 100%)",
+        "gradient-cta":  "linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-container) 100%)",
         "gradient-card": "linear-gradient(180deg, transparent 50%, rgba(67,35,66,0.80) 100%)",
       },
       boxShadow: {

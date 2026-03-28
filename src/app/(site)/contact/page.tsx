@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-[#2d1533] to-[#a61c82] py-16 md:py-20">
+      <div className="py-16 md:py-20" style={{ background: "linear-gradient(135deg, #2d1533 0%, var(--brand-primary) 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-plum-primary-container/80 text-xs font-bold uppercase tracking-[0.15em] mb-3">
             Let&apos;s Talk

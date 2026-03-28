@@ -1,16 +1,19 @@
+import { getContent } from "@/lib/content";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StickyQuoteCTA from "@/components/layout/StickyQuoteCTA";
-import WhatsAppButton from "@/components/contact/WhatsAppButton";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import ThemeCustomizerButton from "@/components/theme/ThemeCustomizerButton";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
+  const content = getContent();
   return (
-    <>
-      <Navbar />
+    <ThemeProvider>
+      <Navbar logoUrl={content.site.logo} companyName={content.site.companyName} />
       <main>{children}</main>
       <Footer />
       <StickyQuoteCTA />
-      <WhatsAppButton />
-    </>
+      <ThemeCustomizerButton />
+    </ThemeProvider>
   );
 }

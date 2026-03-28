@@ -80,6 +80,16 @@ export interface Capability {
   icon: string;
 }
 
+export interface CarouselSlide {
+  id: string;
+  url: string;
+  alt: string;
+  headline?: string;
+  subheadline?: string;
+  ctaPrimaryLabel?: string;
+  ctaPrimaryHref?: string;
+}
+
 export interface SiteContent {
   site: {
     companyName: string;
@@ -93,6 +103,7 @@ export interface SiteContent {
       postcode: string;
       country: string;
     };
+    logo?: string;
     socialLinks: {
       linkedin: string;
       twitter: string;
@@ -104,6 +115,7 @@ export interface SiteContent {
     ctaPrimary: { label: string; href: string };
     ctaSecondary: { label: string; href: string };
     backgroundImage: string;
+    heroCarousel?: CarouselSlide[];
   };
   trustBar: {
     stats: Stat[];

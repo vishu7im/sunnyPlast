@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Theme CSS Variables ────────────────────────── */
+:root {
+  --brand-primary: #1a56db;
+  --brand-primary-container: #76b0f5;
+}
+
 /* ─── Base resets ────────────────────────────────── */
 @layer base {
   html {

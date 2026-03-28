@@ -11,24 +11,54 @@
       "postcode": "B6 7AP",
       "country": "United Kingdom"
     },
+    "logo": "",
     "socialLinks": {
       "linkedin": "https://linkedin.com/company/sunnyplaste",
       "twitter": ""
     }
   },
   "hero": {
-    "headline": "Precision Plastic Packaging for UK Industry",
-    "subheadline": "Thermoformed trays, containers and fully bespoke packaging solutions — designed, tested and manufactured in the UK.",
-    "ctaPrimary": { "label": "Request a Quote", "href": "/contact" },
-    "ctaSecondary": { "label": "View Products", "href": "/products" },
-    "backgroundImage": "/images/hero-bg.jpg"
+    "headline": "Precision Packaging for UK Industry",
+    "subheadline": "Thermoformed trays, containers and bespoke packaging solutions — designed, tested and manufactured in the UK.",
+    "ctaPrimary": {
+      "label": "Request a Quote",
+      "href": "/contact"
+    },
+    "ctaSecondary": {
+      "label": "View Products",
+      "href": "/products"
+    },
+    "backgroundImage": "/images/hero-bg.jpg",
+    "heroCarousel": [
+      {
+        "id": "slide-1774696696835",
+        "url": "/uploads/1774696696840-6mu7f5f2a7.jpg",
+        "alt": "wp6990507-obito-kamui-wallpapers"
+      }
+    ]
   },
   "trustBar": {
     "stats": [
-      { "value": 15, "suffix": "+", "label": "Years Manufacturing" },
-      { "value": 500, "suffix": "+", "label": "Products Delivered" },
-      { "value": 98, "suffix": "%", "label": "On-Time Delivery" },
-      { "value": 50, "suffix": "+", "label": "UK Clients" }
+      {
+        "value": 15,
+        "suffix": "+",
+        "label": "Years Manufacturing"
+      },
+      {
+        "value": 500,
+        "suffix": "+",
+        "label": "Products Delivered"
+      },
+      {
+        "value": 98,
+        "suffix": "%",
+        "label": "On-Time Delivery"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "UK Clients"
+      }
     ]
   },
   "certifications": [
@@ -49,10 +79,26 @@
     }
   ],
   "industries": [
-    { "id": "food-beverage", "label": "Food & Beverage", "icon": "UtensilsCrossed" },
-    { "id": "pharmaceutical", "label": "Pharmaceutical", "icon": "Pill" },
-    { "id": "automotive", "label": "Automotive", "icon": "Car" },
-    { "id": "retail", "label": "Retail & FMCG", "icon": "ShoppingBag" }
+    {
+      "id": "food-beverage",
+      "label": "Food & Beverage",
+      "icon": "UtensilsCrossed"
+    },
+    {
+      "id": "pharmaceutical",
+      "label": "Pharmaceutical",
+      "icon": "Pill"
+    },
+    {
+      "id": "automotive",
+      "label": "Automotive",
+      "icon": "Car"
+    },
+    {
+      "id": "retail",
+      "label": "Retail & FMCG",
+      "icon": "ShoppingBag"
+    }
   ],
   "about": {
     "headline": "Built on British Manufacturing Excellence",
@@ -91,14 +137,32 @@
     "companyRegNumber": "12345678",
     "links": {
       "quickLinks": [
-        { "label": "Home", "href": "/" },
-        { "label": "About", "href": "/about" },
-        { "label": "Products", "href": "/products" },
-        { "label": "Contact", "href": "/contact" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Products",
+          "href": "/products"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
       ],
       "legal": [
-        { "label": "Privacy Policy", "href": "/privacy" },
-        { "label": "Cookie Policy", "href": "/cookies" }
+        {
+          "label": "Privacy Policy",
+          "href": "/privacy"
+        },
+        {
+          "label": "Cookie Policy",
+          "href": "/cookies"
+        }
       ]
     }
   }

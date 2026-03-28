@@ -12,7 +12,16 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        slides={content.hero.heroCarousel ?? []}
+        defaultContent={{
+          eyebrow: "SunnyPlaste UK",
+          headline: content.hero.headline,
+          subheadline: content.hero.subheadline,
+          ctaPrimary: content.hero.ctaPrimary,
+          ctaSecondary: content.hero.ctaSecondary,
+        }}
+      />
       <TrustBar stats={content.trustBar.stats} />
       <ProductShowcase />
       <TrustSection

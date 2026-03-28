@@ -1,60 +1,6 @@
 {
   "products": [
     {
-      "id": "1a2b3c4d-0001-0000-0000-000000000001",
-      "slug": "food-grade-thermoformed-trays",
-      "name": "Food Grade Thermoformed Trays",
-      "category": "food-packaging",
-      "subcategory": "trays",
-      "shortDescription": "Precision thermoformed trays for fresh produce, meat and ready meals, fully compliant with UK food contact regulations.",
-      "longDescription": "Our food-grade thermoformed trays are engineered to meet the most demanding requirements of the UK food industry. Manufactured from high-clarity rPET and PET, these trays offer exceptional rigidity, barrier properties, and shelf appeal.\n\nAvailable in a full range of sizes and configurations, from single-serve to bulk catering formats. Every tray is produced under BRCGS-certified conditions and tested to UK food contact regulations, giving your brand and your customers complete confidence.",
-      "images": [
-        "/uploads/1774643842833-cxs3oe6tw4.png"
-      ],
-      "thumbnailImage": "/uploads/1774643842833-cxs3oe6tw4.png",
-      "specifications": {
-        "material": "rPET / PET / PP",
-        "thickness": "0.25mm – 1.2mm",
-        "dimensions": "Custom up to 600mm × 400mm",
-        "temperature": "-40°C to +220°C",
-        "moq": "5,000 units",
-        "leadTime": "3–4 weeks",
-        "colors": [
-          "Clear",
-          "Black",
-          "White",
-          "Custom"
-        ],
-        "compliance": [
-          "UK Food Contact Regulations",
-          "BRCGS Food Safety",
-          "FDA-equivalent"
-        ]
-      },
-      "industries": [
-        "food-beverage",
-        "retail"
-      ],
-      "isFeatured": true,
-      "isCustom": false,
-      "downloadDatasheet": "",
-      "tags": [
-        "thermoformed",
-        "rPET",
-        "food-safe",
-        "recyclable",
-        "fresh-produce"
-      ],
-      "seo": {
-        "metaTitle": "Food-Grade Thermoformed Trays UK | SunnyPlaste",
-        "metaDescription": "UK-manufactured food-grade thermoformed trays in PET and rPET. BRCGS certified, MOQ 5,000 units. Request a quote today."
-      },
-      "createdAt": "2025-01-15T10:00:00Z",
-      "updatedAt": "2026-03-27T20:37:23.612Z",
-      "industriesStr": "food-beverage, retail",
-      "tagsStr": "thermoformed, rPET, food-safe, recyclable, fresh-produce"
-    },
-    {
       "id": "1a2b3c4d-0002-0000-0000-000000000002",
       "slug": "heavy-duty-industrial-stack-containers",
       "name": "Heavy-Duty Industrial Stack Containers",

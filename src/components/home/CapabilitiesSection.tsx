@@ -25,7 +25,7 @@ export default function CapabilitiesSection({ headline, capabilities }: Capabili
           <ScrollReveal>
             <div className="relative">
               {/* Main block */}
-              <div className="relative bg-gradient-to-br from-[#2d1533] to-[#a61c82] rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] flex items-center justify-center" style={{ background: "linear-gradient(135deg, #2d1533 0%, var(--brand-primary) 100%)" }}>
                 {/* Grid pattern */}
                 <div className="absolute inset-0 opacity-10"
                   style={{

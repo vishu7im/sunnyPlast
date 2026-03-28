@@ -14,7 +14,12 @@ const navLinks = [
   { label: "Contact",  href: "/contact" },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  logoUrl?: string;
+  companyName?: string;
+}
+
+export default function Navbar({ logoUrl, companyName = "SunnyPlaste" }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -46,21 +51,33 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-18">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className={clsx(
-                "flex items-center justify-center w-8 h-8 rounded-lg",
-                transparent ? "bg-white/20" : "bg-plum-primary"
-              )}>
-                <Package2 className="w-5 h-5 text-white" strokeWidth={2} />
-              </div>
-              <span className={clsx(
-                "font-display font-bold text-lg",
-                transparent ? "text-white" : "text-plum-on-surface"
-              )}>
-                SunnyPlaste<span className={clsx(
-                  "font-normal text-sm ml-0.5",
-                  transparent ? "text-white/70" : "text-plum-on-surface-variant"
-                )}> UK</span>
-              </span>
+              {logoUrl ? (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={logoUrl}
+                  alt={companyName}
+                  className="h-8 w-auto object-contain"
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                />
+              ) : (
+                <>
+                  <div className={clsx(
+                    "flex items-center justify-center w-8 h-8 rounded-lg",
+                    transparent ? "bg-white/20" : "bg-plum-primary"
+                  )}>
+                    <Package2 className="w-5 h-5 text-white" strokeWidth={2} />
+                  </div>
+                  <span className={clsx(
+                    "font-display font-bold text-lg",
+                    transparent ? "text-white" : "text-plum-on-surface"
+                  )}>
+                    {companyName}<span className={clsx(
+                      "font-normal text-sm ml-0.5",
+                      transparent ? "text-white/70" : "text-plum-on-surface-variant"
+                    )}> UK</span>
+                  </span>
+                </>
+              )}
             </Link>
 
             {/* Desktop nav */}

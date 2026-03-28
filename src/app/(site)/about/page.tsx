@@ -25,7 +25,7 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-[#2d1533] to-[#a61c82] py-20 md:py-28">
+      <div className="py-20 md:py-28" style={{ background: "linear-gradient(135deg, #2d1533 0%, var(--brand-primary) 100%)" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-plum-primary-container/80 text-xs font-bold uppercase tracking-[0.15em] mb-4">
             Our Story
@@ -47,7 +47,7 @@ export default function AboutPage() {
             {/* Image column */}
             <ScrollReveal>
               <div className="relative">
-                <div className="bg-gradient-to-br from-[#2d1533] to-[#a61c82] rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden">
+                <div className="rounded-2xl aspect-[4/3] flex items-center justify-center overflow-hidden" style={{ background: "linear-gradient(135deg, #2d1533 0%, var(--brand-primary) 100%)" }}>
                   <div className="absolute inset-0 opacity-10"
                     style={{
                       backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
