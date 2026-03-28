@@ -1,4 +1,5 @@
 import AdminSidebar from "@/components/admin/AdminSidebar";
+import DemoGuard from "@/components/admin/DemoGuard";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,8 +7,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+const isDemo = process.env.NEXT_PUBLIC_STATIC_DEMO === "true";
+
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  return (
+  const content = (
     <div className="flex min-h-screen bg-steel-50">
       <AdminSidebar />
       <main className="flex-1 overflow-auto">
@@ -15,4 +18,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </main>
     </div>
   );
+
+  if (isDemo) {
+    return <DemoGuard>{content}</DemoGuard>;
+  }
+
+  return content;
 }

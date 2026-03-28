@@ -38,13 +38,14 @@ jobs:
       # This only modifies the CI runner workspace — your local files are unchanged.
       - name: Remove server-only routes for static export
         run: |
-          rm -rf src/app/api src/app/admin
+          rm -rf src/app/api
           printf 'import { NextResponse } from "next/server";\nexport function middleware() { return NextResponse.next(); }\nexport const config = { matcher: [] };\n' > src/middleware.ts
 
       - name: Build static export
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          NEXT_PUBLIC_STATIC_DEMO: "true"
           # Set REPO_NAME as a GitHub Actions variable (Settings → Variables → Actions)
           # if your site lives at  https://<user>.github.io/<repo-name>
           # Leave it unset (or set to "") for  https://<user>.github.io
